@@ -1,0 +1,93 @@
+body {
+  margin:0 auto;
+  padding:0 80px;
+  font-size: 14px;
+  color:#000;
+  height: auto;
+  /* position:relative; */
+}
+a {
+  text-decoration: none;
+  color:inherit;
+}
+.clearfix{
+  clear:both;
+}
+.ps_10{padding:0 10px;}
+/* .txt_tc{}/ */
+#main{
+  background:#fff;
+  position:relative;
+  display:flex;
+  width:100%;
+  height:82px;
+  border:2px solid #000;
+  /* flex:1 0 200px; */
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+#main > div{
+  display: flex;
+  /* height:60px; */
+  text-align: center;
+  align-items: center;
+  
+}
+.logo{
+  background:chocolate;
+}
+.search{
+  background:violet;
+}
+.user{
+  background:aquamarine; 
+}
+
+
+
+/* ============ 카테고리 바 만들기 ================*/
+#category-bar{
+  display: flex;
+  padding:20px 40px 0;/*위, 좌우, 아래*/
+  gap:32px;/*Q. gap이 반영이 안되는듯??? A. id가 아닌 class로 잡혀있어서 그랬음.*/
+  overflow: auto;
+}
+/* 기본적으로 overflow속성은 보여지도록 visible이다.*/
+#category-bar::-webkit-scrollbar{
+  display: none;
+/*scroll을 안보이게 */}
+.category-button{
+  display:grid;
+  /* margin: 0 16px; */
+  color:#71717171;
+  font-size: 12px;
+  font-weight:600;
+  cursor: pointer;
+  background:#fff;
+}
+.category-button img{
+  width:28px;/*width:24px;*/
+  /* height:24px; */
+  opacity: 0.5;
+}
+.category-button:active, .category-button:hover{
+  color:#000;
+  border-bottom:2px solid #ddd;
+}
+.category-button:active img, .category-button:hover img{
+  opacity: 1;;
+}
+  
+  /* 비행기 sample은 이미 회색이라서 다른 그림들과 맞추기위해 opacity:1을 줌 */
+  /* .category-button:nth-of-type(1) img{
+    opacity: 0.8;
+  } */
+  .category-button:nth-of-type(1):active img{
+    opacity: 1;
+  }
+  
+  .category-button:active, .category-button:hover{
+    color:#000;
+    border-bottom:2px solid #ddd;
+  }

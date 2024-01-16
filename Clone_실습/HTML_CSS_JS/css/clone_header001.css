@@ -1,0 +1,276 @@
+/* body{
+  margin:0 auto;
+} */
+/* ================================================== 
+                        HEADER
+ ================================================== */
+button{
+  display: inline-block;
+  background-color:transparent;
+  border:none;
+}
+header{
+  display: flex;
+  /* padding:0 80px; */
+  padding:0 40px;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  box-shadow: rgb(0 0 0 / 8%) 0 1px 0;
+  /* border를 줄수도 있지만 box-shadow로도 구분선을 만들수 있다. */
+}
+#logo{
+  height:64px;
+  cursor: pointer;
+}
+
+/* ================ 검색 영역 ================== */
+#little-search{
+  display: flex;
+  padding:0 15px;
+  justify-content: center;
+  align-items: center;
+  border:1px solid #dddddd;
+  border-radius: 40px;
+  min-width:348px;/*검색영역의 최소 너비를 준다.*/
+  height:48px;/*실제로는 50px border가 포함*/
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+}
+#little-search *{
+  cursor: pointer;
+}
+#little-search:hover{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+.little-search_button{
+  display:block;
+  flex-shrink: 0;
+  padding:0 16px;
+  white-space: nowrap;
+  /* white-space:nowrap; 지정함으로써 span.divider가 잘림..*/
+  font-size: 14px;
+  font-weight: 600;
+  color:#343434;
+}
+/* .little-search_button:nth-child(3){color:red;} 세번째 선택자를 선택하는것이므로 두번째 버튼이 선택이되는것이다.
+btn1"어디든지",span,btn2"언제든 일주일"이 선택되는것이다. */
+.little-search_button:nth-of-type(3){
+  color:#717171;
+}
+.divider{
+  flex-basis: 1px;
+  flex-shrink:0;
+  background-color: #dddddd;
+  height:24px;
+}
+#magnifying-glass-wrapper{
+  display: flex;/*돋보기를 감싸고 있는 것도 flex*/
+  justify-content: center;/*row로 설정된 가운데 정렬은? A.가로인 메인축에 가로 센터를 정렬하기위해 justify-content*/
+  align-items: center;/*세로 정렬*/
+  background-color:#ff385c;
+  flex-basis: 32px;/*우선순위를 가지고, flex의 너비가 32px, 이 경우 height도 지정 필요*/
+  flex-shrink: 0; /*이미지와 간격이 찌그러 들지 않도록 한다.*/
+  height:32px;
+  border-radius: 50%;
+  /* width: 32px;
+  height:32px; */
+  padding:0;
+  vertical-align: middle;
+}
+#magnifying-glass-icon{
+  width:12px;
+  /* height:20px;
+  padding:5px; */
+}
+/*================== 오른쪽 프로필 영역 =====================*/
+#header-right-section{
+  display: flex;
+  gap: 8px;
+}
+#do-airbnb{
+  padding:12px;
+  font-size: 14px;
+  font-weight: 600;
+  color:#222222;
+  cursor: pointer;
+  border-radius: 22px;
+}
+#do-airbnb:hover{
+  background-color: #f7f7f7;
+}
+#profile-section{
+  display: flex;
+  padding:5px 5px 5px 12px;
+  align-items: center;
+  border:1px solid #dddddd;
+  /* border-radius: 21px; */
+  border-radius: 40px;
+  /* flex안에 간격들은 gap으로 만들수 있다*/
+  gap:12px;
+  cursor: pointer;
+}
+#profile-section:hover{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+/* ============ 카테고리 바 만들기 ================*/
+nav{
+  display: contents;
+  top: 80px;
+  height:98px;
+}
+#category-bar{
+display: flex;
+/* padding:20px 40px 0;위, 좌우, 아래 */ padding:10px 40px 0; 
+gap:32px;/*Q. gap이 반영이 안되는듯??? A. id가 아닌 class로 잡혀있어서 그랬음.*/
+overflow: auto;
+}
+/* 기본적으로 overflow속성은 보여지도록 visible이다.*/
+#category-bar::-webkit-scrollbar{
+  display: none;
+/*scroll을 안보이게 */}
+
+.active-img{
+  display:none;
+}
+
+.category-button{
+  /* display:grid; */
+  /* margin: 0 16px; */
+  color:#717171;
+  /* height:66px; */height:auto;
+  /* padding:14px; */padding:10px;
+  font-size: 12px;
+  font-weight:600;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+/* 비행기 sample은 이미 회색이라서 다른 그림들과 맞추기위해 opacity:1을 줌 */
+/* .category-button:nth-of-type(1) img{
+  opacity: 0.8;
+}
+.category-button:nth-of-type(1):active img{
+  opacity: 1;
+} */
+
+.category-button img{
+  width:28px;/*width:24px;*/
+  /* height:28px; */
+  opacity: 0.5;
+}
+.category-button > div{
+  overflow: hidden;
+  word-break: keep-all;
+}
+
+.category-button:active, 
+.category-button:hover{
+  color:#000;
+  border-bottom:2px solid #ddd;
+  box-sizing: border-box;
+}
+#active-category-button:active img,
+#active-category-button:hover img{
+  opacity: 1;
+}
+#active-category-button .active-img{
+  display: inline-block;
+}
+.category-button:hover .active-img{
+  display: inline-block;
+}
+.category-button:hover .inactive-img{
+  display: none;
+}
+#active-category-button{
+  color:#000;
+  border-bottom: 2px solid #000;
+}
+button#active-category-button img:nth-child(n+1) {
+  opacity: 1;
+}
+#active-category-button .active-img{
+  display: inline-block;;
+
+}
+#active-category-button .inactive-img{
+  display: none;
+}
+
+.place-image-wrapper{
+  position:relative;
+  width:308px;
+  height:293px;
+  overflow: hidden;
+  border-radius: 23px;
+}
+.place-image-wrapper img{
+  width:500px;
+  height:500px;
+}
+.place-image-wrapper img.heart-icon{
+  position:absolute;
+  top:16px;
+  right: 16px;
+  width:24px;
+  height:24px;
+  cursor: pointer;
+}
+/* heart icon 누를때 이미지 작아지게 만들기 */
+.heart-icon:active{
+  transform: scale(0.5);
+  transition: tranform 0.25s ease;
+}
+.description-section{
+  margin-top:13px;
+  display: flex;
+  flex-direction: column;/* 텍스트간의 간격을 주고싶으므로 위 아래 flex */
+  font-size:15px;
+  color: rgb(34, 34, 34);
+  gap: 3px;
+}
+.description-section_title{
+  font-weight: 600;
+  
+}
+main{
+  /* text-align: center; */
+  display:flex;
+  justify-content: center;
+  padding:24px 80px;
+}
+
+#place-items-wrapper{
+  display: grid; /* 격자 무늬 배치를 위해 grid 사용하고 308px너비로 4번 반복해라 */
+  grid-template-columns: repeat(4, 308px);
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 40px 24px;
+}
+#floating-map-button{
+  position:fixed;
+  display: flex;
+  padding:14px 19px;
+  align-items: center;
+  bottom:115px;
+  left:50%;/*부모 요소의 50%*/
+  background-color: #222222;
+  border-radius: 24px;
+  transform: translateX(-50%);/*floating-map-button자신에 대한 50% 중앙정렬*/
+  color:#fff;
+  font-size: 14px;
+  font-weight: 600;
+  gap:8px;
+  cursor: pointer;
+}
+#floating-map-button:hover{
+  box-shadow: transparent, 0 0 0 4px transparent, /*-var 변수*/0 6px 16px rgba(0,0,0,0.12);
+  transform: translateX(-50%) scale(1.04); /*윗부분 transform:translateX(-50%)*/ 
+}
+#floating-map-button span{
+
+}
+#floating-map-button img{
+  width:16px;
+}

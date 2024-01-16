@@ -1,0 +1,154 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
+  background-color: #24145E;
+}
+
+/*  ==================== keyframs ==================== */
+
+/* ★★★★★ image는 한장이지만 개발로서 속성들을 animation으로 제어하는 형식이다. ★★★★★*/
+@keyframes rotation{
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes shrinkAndGrow{
+  0%{
+    transform: scale(0);
+  }
+  25%{
+    transform:scale(0.5);
+  }
+  50%{
+    transform:scale(0);
+  }
+  75%{
+    transform:scale(1);
+  }
+  100%{
+    transform:scale(0);
+  }
+}
+
+@keyframes expandHorizotal {
+  from{
+    transform: scaleX(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+@keyframes appearFromBottom{
+  from{
+    transform:translateY(1000px); /*원래방향이 아래서 위로이므로 translate사용*/
+  }
+  to{
+    transform:translateY(0)
+  }
+}
+@keyframes shakingUpAndDown {
+  from{
+    transform: translate(0);
+  }
+  25%{
+    transform: translateY(5px);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  75%{
+    transform: translateY(5px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+  
+}
+@keyframes soaking {
+  to{
+ transform: translateY(-250px) scale(0);
+  }  
+}
+@keyframes shrinkHorizontal {
+  to{
+    transform: scaleX(0);
+  }
+  
+}
+/*// ====================keyframs ==================== */
+
+#planet_2{
+  animation-name: rotation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;/*가까운 planet이라는 기준의 요소를 박스로 잡기 때문에 작은 박스안에서 돎*/
+  transform-origin: center;/*변형이 되는 중심이 되는 속성이 중심에 있지 않으므로 center설정을 함*/
+}
+#planet_1{
+  animation-name: rotation;
+  animation-duration: 3s;
+  animation-timing-function: linear;/*속도감 없이 꾸준히 진행하는 베지어곡선을 만든다.*/
+  animation-iteration-count: infinite;
+  transform-box: fill-box;/*가까운 planet이라는 기준의 요소를 박스로 잡기 때문에 작은 박스안에서 돎*/
+  transform-origin: center;/*변형이 되는 중심이 되는 속성이 중심에 있지 않으므로 center설정을 함*/
+}
+
+#star_6{
+  animation-name:shrinkAndGrow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin:center;
+}
+
+#star_3{
+  animation: shrinkAndGrow 2s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_5{
+  animation: shrinkAndGrow 6s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_7{
+  animation: shrinkAndGrow 11s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_8{
+  animation: shrinkAndGrow 9s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#UFO-beam{
+  animation: expandHorizotal 3.5s forwards;
+  transform-box:fill-box;
+  transform-origin: top;
+}
+
+#number-0{
+  animation:appearFromBottom 3s;
+  animation-timing-function: cubic-bezier(.15,.82,.98,-0.14);  
+}
+#alien_hand-R,#alien_hand-L{
+  animation:shakingUpAndDown 1s infinite;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* css 상태로 정의를 해두고 애니메이션이 끝난경우 id나 class를 조작해서 애니메이션을 스크립트로 돌게 하는것 */
+#number-0-soaking{
+  animation:soaking 2.5s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#UFO-beam-disappearing{
+  animation:shrinkHorizontal 2.5s;
+  transform-box: fill-box;
+  transform-origin: center;
+}

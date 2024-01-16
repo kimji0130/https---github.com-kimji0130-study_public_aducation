@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid 만들어보기</title>
+  <style>
+    #grid{
+      display: grid;
+      grid-template-rows: 50px 50px;/* 첫번째 열의 크기 값 , 두번째 열의 크기 값*/
+      grid-template-columns: 50px 50px;/* 첫번째 행의 크기 값 , 두번째 행의 크기 값*/
+      gap:10px; /* 열 간의 간격, 행 간의 간격 모두 들어감.. row-gap , columns-gap */
+      text-align: center;
+    }
+    #grid div{
+      background-color: red;
+    }
+    #grid div:first-child{
+      background-color: yellow;
+      grid-row-start:1;/*요소가 #grid{gap:10px}로 간격이 나뉨*/
+      grid-row-end:3; /* 끝나는 지점이 열의 3번째이다. */
+    }
+  </style>
+</head>
+<body>
+  <div id="grid">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
+  </div>
+</body>
+</html>

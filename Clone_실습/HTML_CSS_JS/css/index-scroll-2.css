@@ -1,0 +1,32 @@
+#parallax-wrapper{
+  height: 100vh;
+
+  overflow-x: hidden;
+  /* 안의 요소들에 스크롤링이 생겼으면 좋겠으므로
+   parallax 평면의 z =0 평면이 1px만큼 이동하는 것 */
+  perspective: 1px;
+}
+.parallax{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+
+}
+#parallax-A{
+  background-color: red;
+  height: 150rem;
+  
+}
+/* 평면 자체를 거리와 요소를 변경하여 스크롤 속도를 다르게 만들수 있음.  */
+#parallax-B{
+  background-color: aqua;
+  height: 500px;
+  transform: translateZ(-2px);
+}
+#parallax-C{
+  top:300px;
+  background-color: blueviolet;
+  height:500px;
+  transform: translateZ(-1px);
+}

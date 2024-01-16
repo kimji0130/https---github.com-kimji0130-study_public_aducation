@@ -1,0 +1,34 @@
+@keyframes moveToRight{
+  from{
+    color:red;
+  }
+  50%{
+    color:blue;
+  }
+  to{
+  color:yellow;
+  transform: translateX(300px);
+  }
+}
+
+button{
+  /*=============== animation ===========================*/
+  /* animation:moveToRight 2s; 축약형*/
+  /* animation-name: moveToRight; */
+  /*animation-duration: 5s; /*속도가 더 빨라지게 만드는것*/
+  /*animation-delay: 2s; /*지정 시간 후 움직이게 만듦*/
+  /*animation-direction: alternate; /*reverse/alternate/ */
+  /*animation-iteration-count: infinite;/*무한 반복: infinite*/
+  /* animation-play-state: paused;  재생과 멈춤 상태 지정*/
+  /*animation-play-state: running;*/
+  /* animation-timing-function: ; 어떤 시간 간격으로 진행할지*/
+  /*animation-fill-mode: both; /*fowards애니메이션이 끝나면 마지막 상태의 값을 기억하고 멈춤 , backwards 재생이 안될때도 애니메이션의 처음 값의 요소가 남겨져있음 , both 처음값이 끝나도 끝난값이 유지된다*/
+
+  /*================= transform ======================== */
+  /* transform: translateX(300px); 300px 만큼 X 축으로 이동*/
+  /*transform:scale(2.0);/*확대 축소*/
+  /*transform:rotate(90deg);/*회전-string 없이 작성*/
+  transform:skew(15deg, 15deg);/*요소 기울기*/
+  
+  color:black;
+}
